@@ -1,0 +1,13 @@
+# docker-compose.yml
+# docker-compose 실행 시 실행자의 로컬 환경으로 MySQL 도커 이미지를 pull 하여 실행하므로, Credential 노출 시의 위험은 없을 것으로 판단했습니다.
+
+services:
+  mysql:
+    image: 'mysql:latest'
+    environment:
+      - 'MYSQL_DATABASE=mydatabase'
+      - 'MYSQL_PASSWORD=secret'
+      - 'MYSQL_ROOT_PASSWORD=verysecret'
+      - 'MYSQL_USER=myuser'
+    ports:
+      - '3306'
